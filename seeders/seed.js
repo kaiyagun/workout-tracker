@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Workout = require('../models/Workout.js');
+const Workout = require('../models/workout.js');
 require('dotenv').config();
 
 
