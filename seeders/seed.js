@@ -4,9 +4,7 @@ require('dotenv').config();
 
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout', {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true,
+  useNewUrlParser: true
 });
 
 const workoutSeed = [
@@ -131,7 +129,6 @@ const workoutSeed = [
 Workout.deleteMany({})
   .then(() => Workout.collection.insertMany(workoutSeed))
   .then((data) => {
-    console.log(data.result.n + ' records inserted!');
     process.exit(0);
   })
   .catch((err) => {
